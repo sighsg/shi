@@ -1,0 +1,157 @@
+.detalle-card{
+    border: 1px solid rgba(0, 0, 0, 0.274);
+    border-radius: 10px;   
+    max-width: 40%;
+    margin: 0 auto; 
+}
+
+#titulo-detalle{
+    border: 3px solid var(--verdeHeaders);
+    text-align: center;
+    border-top-left-radius:10px;
+    border-top-right-radius: 10px;
+    background-color: var(--verdeHeaders);
+    color: white;
+}
+
+#detalle-body{
+    padding: 0.5em;
+    display: flex;
+    flex-direction: row;
+}
+
+#detalle-fc{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    padding: 0.5em;
+    border-right: 1px solid rgba(0, 0, 0, 0.274);
+}
+
+#detalle-fc img{
+    max-width: 100%;
+}
+
+#detalle-fc-social{
+    margin-left: 0.5em;
+    display: flex;
+    flex-direction: column;
+    line-height: 2em;
+    margin-top: 0.5em;
+}
+
+#detalle-sc{
+    width: 100%;
+    padding: 0.5em;
+    margin-left: 1em;}
+
+button{
+    text-align: center;
+    background-color: var(--verdeBotones);
+    font-weight: 400;
+    color: white;
+    text-align: left;
+    cursor: pointer;
+    min-height: 3em;
+    margin-bottom: 1em;
+    margin: 0.5em 0.5em 0.5em 0.5em;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 5px var(--verdeBorde);
+    transition: background-color 0.3s;
+    transition: transform 0.3s ease;
+    margin-bottom: 1em;
+}
+
+button:hover {
+    background-color: var(--verdeHover);
+    transform: scale(1.01);
+    text-decoration: underline;
+}
+
+button:active {
+    transform: scale(0.99) rotate(0.3deg);
+}
+
+#detalle-telefonos{
+    display: grid;
+    grid-template-columns: 40% 40%;
+    line-height: 0.3em;
+    margin: 0em 0em 0em 0em;
+}
+
+#detalle-telefonos i{
+    color: var(--verdeBotones)
+}
+
+#detalle-share{
+    text-align: right;
+}
+
+#detalle-btn{
+    margin: 0 auto;
+    width: 35%;
+    display: flex;
+    flex-direction: row;
+}
+
+#detalle-btn div:first-of-type{
+    width: 50%;
+}
+
+#detalle-btn div:last-of-type{
+    text-align: right;
+    width: 50%;
+}
+
+@media screen and (max-width: 1648px){
+    .detalle-card{
+        max-width: 60%;
+    }
+}
+
+@media screen and (max-width: 1100px){
+    .detalle-card{
+        max-width: 80%;
+    }
+}
+
+@media screen and (max-width: 825px){
+    .detalle-card{
+        max-width: 100%;
+    }
+
+    #detalle-fc{
+        width: 40%;
+    }
+
+    #detalle-btn{
+        width: 100%;
+    }
+
+    #detalle-fc a,
+    #detalle-sc, 
+    #detalle-sc i,
+    #detalle-telefonos p{
+        font-size: 0.75em;
+    }
+}
+
+@media screen and (max-width: 500px){
+    #detalle-fc{
+        width: 45%;
+    }
+
+    #detalle-fc a,
+    #detalle-sc{
+        font-size: 0.6em;
+    }
+
+    #detalle-telefonos p{
+        font-size: 0.6em;
+    }
+
+    #detalle-fc i{
+        font-size: 1em;
+    }
+}

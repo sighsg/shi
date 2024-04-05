@@ -1,0 +1,138 @@
+
+.listaAsociados{
+    background: var(--grisBackground);
+    width: 100%;
+}
+
+.card-container{
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+} 
+
+.card{
+    min-height: 10em;
+    margin: 0.35em 0.35em 1em 0.35em;
+    border: 1px solid rgba(0, 0, 0, 0.274);
+    border-radius: 10px;
+}
+
+h5{
+    margin: 0.6em;
+    font-size: 0.8em;
+}
+
+#titulo-card{
+    border: 3px solid var(--verdeHeaders);
+    text-align: center;
+    border-top-left-radius:10px;
+    border-top-right-radius: 10px;
+    background-color: var(--verdeHeaders);
+    color: white;
+}
+
+#cardSocial i{
+    font-size: 1.2em;
+}
+
+#cardBody{
+    text-align: center;
+    font-size: 0.8em;
+}
+
+#cardBody img{
+    margin-top: 1em;
+    min-height: 7em;
+    max-height: 9em;
+}
+
+#cardBody p,
+#cardBody a
+{
+    text-align: center;
+    font-size: 0.9em;
+}
+
+#cardBody button{
+    text-align: center;
+    background-color: var(--verdeBotones);
+    font-weight: 400;
+    color: white;
+    text-align: left;
+    cursor: pointer;
+    min-height: 3em;
+    margin-bottom: 1em;
+    margin: 0.5em 0.5em 0.5em 0.5em;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 5px var(--verdeBorde);
+    transition: background-color 0.3s;
+    transition: transform 0.3s ease;
+    margin-bottom: 1em;
+}
+
+#cardBody button:hover {
+    background-color: var(--verdeHover);
+    transform: scale(1.01);
+    text-decoration: underline;
+}
+
+#cardBody button:active {
+    transform: scale(0.99) rotate(0.3deg);
+}
+
+#cardSocial{
+    cursor: pointer;
+    margin: 0 auto;
+    max-width: 30%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#cardInfo{
+    min-height: 22em;
+    padding: 0.3em;
+}
+
+#cardBoton button{
+    width: 35%;
+    text-align: center;
+}
+
+@media screen and (max-width: 1619px){
+    .card{
+        height: auto;
+    }
+    .card-container{
+        grid-template-columns: 33% 33% 33%;
+    }     
+}
+
+@media screen and (max-width: 1226px){
+    .card-container{
+        grid-template-columns: 50% 50%;
+    }     
+}
+
+@media screen and (max-width: 809px){
+    .card-container{
+        display: block;
+    }
+
+    #cardHierro{
+        min-height: auto;
+    }
+
+    #cardInfo{
+        font-size: 0.9em;
+        color: red;
+    }
+
+    #cardBody img{
+        min-height: 5em;
+        max-height: 6em;
+    }
+    
+    #cardInfo{
+        min-height: auto;
+    }
+}

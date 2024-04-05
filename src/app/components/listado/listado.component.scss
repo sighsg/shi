@@ -1,0 +1,70 @@
+#listadoDepartamentos {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin: 0 auto;
+    padding: 0.5em;
+}
+
+#listadoDepartamentos button{
+    background-color: var(--verdeBotones);
+    font-weight: 400;
+    color: white;
+    text-align: left;
+    cursor: pointer;
+    min-height: 3em;
+    margin: 0.5em 0.5em 0.5em 0.5em;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 5px var(--verdeBorde);
+    transition: background-color 0.3s;
+    transition: transform 0.3s ease;
+}
+
+#listadoDepartamentos i {
+    height: 90%;
+    vertical-align: middle;
+    background-color: inherit;
+    color: #F7F7F7;
+}
+
+#listadoDepartamentos button:hover {
+    background-color: var(--verdeHover);
+    transform: scale(1.01);
+    text-decoration: underline;
+}
+
+#listadoDepartamentos button:active {
+    transform: scale(0.99) rotate(0.3deg);
+}
+
+.input-group{
+    width: 97.5%;
+    margin: 0 auto;
+    margin-bottom: 1.5em;
+}
+
+#btn-buscar{
+    border: 1px solid var(--verdeHeaders);
+    color: var(--verdeHeaders);
+    border-radius: 5px;
+    margin-left: 0.3em;
+    padding: 0 1em 0 1em;
+}
+
+.form-control:focus {
+    color: var(--bs-body-color);
+    background-color: var(--bs-body-bg);
+    border-color: var(--verdeHeaders);
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem var(--verdeBorde);
+}
+
+#btn-buscar:hover{
+    background-color: var(--verdeHover);
+    border: 1px solid var(--verdeHover);
+    color: white;
+}
+
+#btn-buscar:active{
+    background-color: var(--verdeBotones);
+}

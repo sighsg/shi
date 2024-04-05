@@ -1,0 +1,34 @@
+<div id="directorioCompleto">
+    <div>
+        <div>
+            <h2>DIRECTORIO DE CRIADORES</h2>
+            <p>El Directorio de Criadores Cebuínos es una herramienta de consulta
+                creada por la Asociación Cebú para que usted contacte en forma sencilla
+                a nuestros asociados en todo el territorio nacional. Allí encontrará
+                criadores de las razas Brahman Blanco, Brahman Rojo, Gyr y Guzerá;
+                al igual que ganaderos comerciales vinculados con nuestra entidad.
+                Tan solo con hacer click sobre el departamento que desee consultar,
+                tendrá acceso al directorio respectivo.
+            </p>
+        </div>
+        <!-- Barra de busqueda -->
+        <div class="input-group">
+            <input type="search" class="form-control rounded" placeholder="Buscar por departamento, ciudad, hacienda o nombre de criador" 
+            aria-label="Search" aria-describedby="search-addon" />
+            <button type="button" id="btn-buscar" data-mdb-ripple-init>Buscar</button>
+        </div>
+        <!-- Barra de busqueda -->
+    </div>
+
+    <div id="listadoDepartamentos">
+        <!-- 
+           Botones generados dinámicamente para cada departamento, los departamentos que no cuenten
+           con haciendas no se mostrarán, dado que los toma desde el archivo excel, sin embargo, 
+           debe existir el enrutamiento para los 32 y Venezuela. 
+        -->
+        <button *ngFor="let departamento of departamentos" (click)="navigateToDepartamento(departamento)">
+            <i class="bi bi-geo-alt-fill"></i> {{ departamento }}
+        </button>
+    </div>
+
+</div>

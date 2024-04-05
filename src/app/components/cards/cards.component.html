@@ -1,0 +1,54 @@
+<div class="listaAsociados">
+    <!-- Título del listado -->
+    <div>
+        <!-- Aquí va el mapa del departamento -->
+        <h2>Departamento de {{ departamento }}</h2>
+    </div>
+    <!-- Contenedor del grid de tarjetas -->
+    <div class="card-container">
+        <!-- Tarjeta individual para cada persona -->
+        <div *ngFor="let asociado of asociados" class="card">
+            <div id="titulo-card">
+                <h5 class="card-title">{{ asociado.nombre }} <br>Código de Asociado: {{asociado.codigoAsociado}}</h5>
+            </div>
+            <div id="cardBody">
+                <div id="cardHierro">
+                    <img src="https://asocebu.com/images/hierros/{{asociado.codigoAsociado}}.png">                 
+                </div>
+
+                <div id="cardInfo">                    
+                    <p *ngIf="asociado.hacienda1 && asociado.municipio1 && asociado.departamento1">
+                        <b>{{asociado.hacienda1}} - {{asociado.municipio1 }}, {{asociado.departamento1}}</b>
+                    </p>
+                    <p *ngIf="asociado.hacienda2 && asociado.municipio2 && asociado.departamento2">
+                        <b>{{asociado.hacienda2}} - {{asociado.municipio2}}, {{asociado.departamento2}}</b>   
+                    </p>
+                    <p *ngIf="asociado.hacienda3 && asociado.municipio3 && asociado.departamento3">
+                        <b>{{asociado.hacienda3}} - {{asociado.municipio3}}, {{asociado.departamento3}}</b>
+                    </p>
+                    <p>
+                        {{asociado.tipoGanado}}
+                    </p>
+                    <p *ngIf="asociado.direccion && asociado.ciudadDireccion && asociado.departamentoDireccion">
+                        {{asociado.direccion}} - 
+                        {{asociado.ciudadDireccion}}, {{asociado.departamentoDireccion}}</p>
+                    <p>{{asociado.telefono1}}</p>
+                    <p><a href="mailto:{{asociado.email1}}">{{asociado.email1}}</a>
+                    <p><a href="{{asociado.sitioWeb}}" target="_blank"
+                            rel="noopener noreferrer">{{asociado.sitioWeb}}</a>
+                    </p>
+
+                    <a *ngIf="asociado.whatsapp1" style="padding: 0.7em; background: inherit;" href="https://wa.me/+{{asociado.whatsapp1}}" target="_blank" role="button"><i class="bi bi-whatsapp"></i></a>
+                    <a *ngIf="asociado.instagram" style="padding: 0.7em; background: inherit;" href="https://www.instagram.com/{{asociado.instagram}}" target="_blank" role="button"><i class="bi bi-instagram"></i></a>
+                    <a *ngIf="asociado.facebook" style="padding: 0.7em; background: inherit;" href="https://www.facebook.com/{{asociado.facebook}}" target="_blank"role="button"><i class="bi bi-facebook"></i></a>
+                    <a *ngIf="asociado.facebook" style="padding: 0.7em; background: inherit;" href="https://www.tiktok.com/@{{asociado.tiktok}}" target="_blank"role="button"><i class="bi bi-tiktok"></i></a>
+
+                </div>
+                <div id="cardBoton">
+                    <button (click)="verMas(asociado)">Ver más</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
