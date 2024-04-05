@@ -2,12 +2,18 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ExcelService } from '../../services/excel.service';
 
+interface PageEvent {
+  first: number;
+  rows: number;
+  page: number;
+  pageCount: number;
+}
+
 @Component({
   selector: 'app-cards',
   templateUrl: './cards.component.html',
   styleUrl: './cards.component.scss'
 })
-
 
 export class CardsComponent implements OnInit {
 
@@ -18,7 +24,7 @@ export class CardsComponent implements OnInit {
 
   ngOnInit(): void {
     this.departamento = this.route.snapshot.params['departamento'];
-    
+
     this.excelService.readExcel().then(
       data => {
         this.asociados = data.filter(asociados => asociados.departamento1 === this.departamento);

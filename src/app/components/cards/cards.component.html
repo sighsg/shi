@@ -4,7 +4,7 @@
         <!-- Aquí va el mapa del departamento -->
         <h2>Departamento de {{ departamento }}</h2>
     </div>
-    <!-- Contenedor del grid de tarjetas -->
+    <!-- Todas las cartas -->
     <div class="card-container">
         <!-- Tarjeta individual para cada persona -->
         <div *ngFor="let asociado of asociados" class="card">
@@ -29,9 +29,11 @@
                     <p>
                         {{asociado.tipoGanado}}
                     </p>
-                    <p *ngIf="asociado.direccion && asociado.ciudadDireccion && asociado.departamentoDireccion">
-                        {{asociado.direccion}} - 
-                        {{asociado.ciudadDireccion}}, {{asociado.departamentoDireccion}}</p>
+                    <p>
+                        <span *ngIf="asociado.direccion">{{asociado.direccion}}</span>
+                        <span *ngIf="asociado.ciudadDireccion"> - {{asociado.ciudadDireccion}}, </span>
+                        <span *ngIf="asociado.departamentoDireccion">{{asociado.departamentoDireccion}}</span> 
+                    </p>
                     <p>{{asociado.telefono1}}</p>
                     <p><a href="mailto:{{asociado.email1}}">{{asociado.email1}}</a>
                     <p><a href="{{asociado.sitioWeb}}" target="_blank"
@@ -43,12 +45,13 @@
                     <a *ngIf="asociado.facebook" style="padding: 0.7em; background: inherit;" href="https://www.facebook.com/{{asociado.facebook}}" target="_blank"role="button"><i class="bi bi-facebook"></i></a>
                     <a *ngIf="asociado.facebook" style="padding: 0.7em; background: inherit;" href="https://www.tiktok.com/@{{asociado.tiktok}}" target="_blank"role="button"><i class="bi bi-tiktok"></i></a>
 
-                </div>
+                </div>                
                 <div id="cardBoton">
                     <button (click)="verMas(asociado)">Ver más</button>
                 </div>
             </div>
-
         </div>
+        <!-- Tarjeta individual para cada persona -->
     </div>
+    <!-- Todas las cartas -->
 </div>

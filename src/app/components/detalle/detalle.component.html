@@ -14,7 +14,7 @@
                 <a *ngIf="asociados.whatsapp1" href="https://wa.me/+{{asociados.whatsapp1}}" target="_blank"
                     role="button"><i class="bi bi-whatsapp"></i> WhatsApp</a>
                 <a *ngIf="asociados.whatsapp2" href="https://wa.me/+{{asociados.whatsapp2}}" target="_blank"
-                    role="button"><i class="bi bi-whatsapp"></i> WhatsApp 2</a>
+                    role="button"><i class="bi bi-whatsapp"></i> WhatsApp2</a>
                 <a *ngIf="asociados.instagram" href="https://www.instagram.com/{{asociados.instagram}}" target="_blank"
                     role="button"><i class="bi bi-instagram"></i> Instagram</a>
                 <a *ngIf="asociados.whatsapp2" href="https://www.facebook.com/{{asociados.facebook}}" target="_blank"
@@ -25,7 +25,7 @@
                 <a *ngIf="asociados.email1" href="mailto:{{asociados.email1}}"><i class="bi bi-envelope"></i>
                     E-mail</a>
                 <a *ngIf="asociados.email2" href="mailto:{{asociados.email2}}"><i class="bi bi-envelope"></i>
-                    E-mail 2</a>
+                    E-mail2</a>
             </div>
 
         </div>
@@ -41,8 +41,11 @@
                 <b>{{asociados.hacienda3}} - {{asociados.municipio3}}, {{asociados.departamento3}}</b></p>
 
             <p *ngIf="asociados.tipoGanado">{{asociados.tipoGanado}}</p>
-            <p *ngIf="asociados.direccion && asociados.ciudadDireccion && asociados.departamentoDireccion">
-                {{asociados.direccion}} - {{asociados.ciudadDireccion}}, {{asociados.departamentoDireccion}}</p>
+            <p>
+                <span *ngIf="asociados.direccion">{{asociados.direccion}}</span>
+                <span *ngIf="asociados.ciudadDireccion"> - {{asociados.ciudadDireccion}}, </span>
+                <span *ngIf="asociados.departamentoDireccion">{{asociados.departamentoDireccion}}</span> 
+            </p>
 
             <div id="detalle-telefonos">
                 <p *ngIf="asociados.telefono1"><i class="bi bi-telephone"></i>ㅤ{{asociados.telefono1}}</p>
@@ -53,7 +56,7 @@
                 <p *ngIf="asociados.telefono6"><i class="bi bi-telephone"></i>ㅤ{{asociados.telefono6}}</p>
             </div>
 
-            <p>{{asociados.representanteLegal}}</p>
+            <p *ngIf="asociados.representanteLegal">Representante legal: {{asociados.representanteLegal}}</p>
             <p>{{asociados.campoAdicional1}}</p>
 
             <div id="detalle-share">

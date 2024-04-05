@@ -141,17 +141,25 @@ button:active {
     #detalle-fc{
         width: 45%;
     }
+    
+    #detalle-fc i{
+        font-size: 1em;
+    }
 
-    #detalle-fc a,
+    #detalle-fc a{
+        font-size: 0.55em;
+    }
+
+    #detalle-sc b{
+        font-size: 0.85em;
+    }
+
     #detalle-sc{
-        font-size: 0.6em;
+        font-size: 0.75em;
     }
 
     #detalle-telefonos p{
         font-size: 0.6em;
     }
 
-    #detalle-fc i{
-        font-size: 1em;
-    }
 }

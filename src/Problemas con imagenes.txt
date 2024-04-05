@@ -1,0 +1,10 @@
+Estan en formato .jpg: 
+	*Córdoba: 1415, 2388 y 2386
+	*Cesár: 1226
+	*Meta 2394
+	*Huila: 2391
+	*Valle del Cauca: 2389, 2385 y 2404
+	*Santander: 2383 y 2406
+Otros problemas:
+	*Bolívar: 2447 no existe, esta usando el hierro de 1227 <- Ninguno de los dos hierros coincide con SIR
+	*Santander: 1644 no existe, esta usando el hierro de 1944 <- Al parecer el código estaba mal escrito en la página
