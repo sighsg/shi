@@ -13,23 +13,40 @@
         </div>
         <!-- Barra de busqueda -->
         <div class="input-group">
-            <input type="search" class="form-control rounded" placeholder="Buscar por departamento, ciudad, hacienda o nombre de criador" 
-            aria-label="Search" aria-describedby="search-addon" />
-            <button type="button" id="btn-buscar" data-mdb-ripple-init>Buscar</button>
+            <input type="search" class="form-control rounded"
+                placeholder="Buscar por nombre, código, hacienda o tipo de ganado" aria-label="Search"
+                aria-describedby="search-addon" [(ngModel)]="filtroBusqueda" (keydown.enter)="buscar()" />
+            <button type="button" id="btn-buscar" data-mdb-ripple-init (click)="buscar()">Buscar</button>
         </div>
         <!-- Barra de busqueda -->
-
+        <!-- No se encuentra nada -->
+        <p class="noMatches">No se ha encontrado ningún criador coincidente a su búsqueda.</p>
+        <!-- No se encuentra nada -->
+        <!-- Sección para mostrar las coincidencias de búsqueda -->
+        <div id="coincidenciasBusqueda" *ngIf="asociadosFiltrados && asociadosFiltrados.length > 0">
+            <div id="headerCoincidencias">
+                <div>
+                    <b>Resultados de la búsqueda:</b>
+                </div>
+                <div>
+                    <button (click)="clearSearch()"><i class="bi bi-trash"></i>Deshacer búsqueda</button>
+                </div>
+            </div>
+            <ol>
+                <li *ngFor="let asociado of asociadosFiltrados; let i = index">
+                    <!-- Cada resultado es un enlace hacia el detalle del criador -->
+                    <a [routerLink]="['/detalle', asociado.codigoAsociado]">
+                        {{ asociado.nombre }} - Código: {{ asociado.codigoAsociado }}
+                    </a> <br>
+                    <span *ngIf="asociado.hacienda1">{{ asociado.hacienda1 }}</span>
+                    <span *ngIf="asociado.departamento1"> - {{ asociado.departamento1 }}</span>
+                    <span *ngIf="asociado.tipoGanado"> - {{ asociado.tipoGanado }}</span>
+                </li>
+            </ol>
+        </div>
+        <!-- Sección para mostrar las coincidencias de búsqueda -->
     </div>
-
-    <div id="listadoDepartamentos">
-        <!-- 
-           Botones generados dinámicamente para cada departamento, los departamentos que no cuenten
-           con haciendas no se mostrarán, dado que los toma desde el archivo excel, sin embargo, 
-           debe existir el enrutamiento para los 32 y Venezuela. 
-        -->
-        <button *ngFor="let departamento of departamentos" (click)="navigateToDepartamento(departamento)">
-            <i class="bi bi-geo-alt-fill"></i> {{ departamento }}
-        </button>
+    <div id="app-departamentos">
+        <app-departamentos></app-departamentos>
     </div>
-
 </div>

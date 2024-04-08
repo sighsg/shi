@@ -11,23 +11,27 @@ import { ExcelService } from '../../services/excel.service';
 export class DetalleComponent implements OnInit {
 
   asociados: any;
+  idActual: any;
 
   constructor(private route: ActivatedRoute, private excelService: ExcelService) { }
 
   ngOnInit(): void {
+
+    this.asociadoProximo()
 
     this.route.params.subscribe(params => {
       const codigoAsociado = String(params['codigoAsociado']);
       this.excelService.readExcel().then(
         data => {
           this.asociados = this.excelService.getAsociadoByID(codigoAsociado, data);
+          
           /* console.log('Asociado encontrado:', this.asociados);  */
         },
         error => {
           console.log('Error al leer el archivo Excel:', error);
         }
       );
-    });   
+    });
   }
 
   socialShare() {
@@ -35,14 +39,15 @@ export class DetalleComponent implements OnInit {
       title: "Esta es mi tarjeta personal de Criador registrado en Asocebú. Para visualizarla ingrese al siguiente link: ",
       url: window.document.location.href
     })
-  }
-
-  asociadoAnterior(){
-    console.log("Anterior")
-  }
+  }  
 
   asociadoProximo(){
     console.log("proximo")
+    console.log("Id Actual: ", this.idActual)
+  }
+
+  asociadoAnterior(){
+    
   }
 }
 

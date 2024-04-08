@@ -11,13 +11,15 @@ import { DetalleComponent } from './components/detalle/detalle.component';
 import { ButtonModule } from 'primeng/button';
 import { PaginatorModule } from 'primeng/paginator';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DepartamentosComponent } from './components/listado/departamentos/departamentos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListadoComponent,
     CardsComponent,
-    DetalleComponent
+    DetalleComponent,
+    DepartamentosComponent
   ],
   imports: [
     BrowserModule,

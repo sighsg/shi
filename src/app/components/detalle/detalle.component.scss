@@ -1,8 +1,10 @@
+
 .detalle-card{
     border: 1px solid rgba(0, 0, 0, 0.274);
     border-radius: 10px;   
     max-width: 40%;
     margin: 0 auto; 
+    background-color: white;
 }
 
 #titulo-detalle{
@@ -131,6 +133,7 @@ button:active {
 
     #detalle-fc a,
     #detalle-sc, 
+    #detalle-sc span,
     #detalle-sc i,
     #detalle-telefonos p{
         font-size: 0.75em;
@@ -138,28 +141,67 @@ button:active {
 }
 
 @media screen and (max-width: 500px){
+    .detalle-card{
+        max-width: 100%;
+    }
+
+    .detalle-title{
+        font-size: 0.8em;
+    }
+
+    #detalle-body{
+        flex-direction: column;
+    }
+
     #detalle-fc{
-        width: 45%;
-    }
-    
-    #detalle-fc i{
-        font-size: 1em;
-    }
-
-    #detalle-fc a{
-        font-size: 0.55em;
+        width: 100%;
+        border: none;
+        flex-direction: column;
+        padding: 0.1em;
     }
 
-    #detalle-sc b{
-        font-size: 0.85em;
+    #detalle-fc img{
+        max-width: 40%;
+        margin: 0 auto;
+    }
+
+    #detalle-fc-social{
+        display: grid;
+        width: 100%;
+        grid-template-columns: 33% 33% 33%;
+        text-align: left;
+        margin-top: 0.5em;
+        margin-left: 0;
+        text-align: center;
+        margin-bottom: 0;
+    }
+
+    #detalle-fc-social a,
+    #detalle-fc-social i{
+        font-size: 0.7em;
     }
 
     #detalle-sc{
+        margin-left: 0;
+        margin-top: 0;
+    }
+
+    #detalle-haciendas p,
+    #detalle-haciendas b{
+        text-align: center;
+        font-size: 0.9em;
+    }
+
+    #detalle-sc, 
+    #detalle-sc span,
+    #detalle-sc i,
+    #detalle-telefonos p{
         font-size: 0.75em;
     }
 
-    #detalle-telefonos p{
-        font-size: 0.6em;
+    button{
+        min-height: auto;
+        margin: 0.1em 0.1m 0.1em 0.1em;
+        margin-bottom: 0.5em;
     }
-
 }

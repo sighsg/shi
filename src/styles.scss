@@ -25,19 +25,21 @@
 
 * {
     font-family: "Asap Condensed", sans-serif;
-    font-size: 16px;
-    background-color: var(--grisBackground);
+    font-size: 16px;    
     vertical-align: middle;
-    background-color: inherit;
+    background-color: inherit;    
 }
 
 body {
     max-width: 95% !important;
-    max-height: 80% !important;
+    max-height: 90% !important;
+    min-height: 90vh;
+    min-width: 95vw;
     vertical-align: middle;
     padding: 0.5em 2em 0.5em 2em;
     margin: auto !important;
-    border: 1px solid var(--grisTexto);
+    /* border: 1px solid palevioletred; */    
+    background: var(--grisBackground) !important;
 }
 
 h1,
@@ -46,6 +48,7 @@ h2 {
     font-size: 2.5em !important;
     margin: 0.5em !important;
     color: var(--verdeTitulos) !important;
+    font-weight: bold !important;
 }
 
 p {

@@ -1,0 +1,31 @@
+#listadoDepartamentos {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin: 0 auto;
+    padding: 0.5em;
+}
+
+#listadoDepartamentos button{
+    background-color: var(--verdeBotones);
+    font-weight: 400;
+    color: white;
+    text-align: left;
+    cursor: pointer;
+    min-height: 3em;
+    margin: 0.5em 0.5em 0.5em 0.5em;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 5px var(--verdeBorde);
+    transition: background-color 0.3s;
+    transition: transform 0.3s ease;
+}
+
+#listadoDepartamentos button:hover {
+    background-color: var(--verdeHover);
+    transform: scale(1.01);
+    text-decoration: underline;
+}
+
+#listadoDepartamentos button:active {
+    transform: scale(0.99) rotate(0.3deg);
+}

@@ -20,6 +20,7 @@ export class ExcelService {
           const sheetName: string = workbook.SheetNames[0]; //Se obtiene el nombre de la hoja
           const worksheet: XLSX.WorkSheet = workbook.Sheets[sheetName]; //Se obtiene la hoja
           const jsonData: any[] = XLSX.utils.sheet_to_json(worksheet, { raw: false }); 
+
           /* El raw false se asegura que los datos se interpreten como texto, si esta en
           true puede dedicir interpretar número como type-number y no type-text, por ejemplo. */              
           resolve(jsonData);
@@ -35,6 +36,11 @@ export class ExcelService {
   esto es para la vista de la carta detallada */
 
   getAsociadoByID(codigoAsociado: any, excelData:any[]):any{
+    console.log(codigoAsociado)
     return excelData.find(asociado => asociado.codigoAsociado === codigoAsociado)
+  }
+
+  anterior(){
+    
   }
 }

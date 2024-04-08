@@ -1,3 +1,4 @@
+<div class="card-body">
 <div class="detalle-card">
     <div id="titulo-detalle">
         <h5 class="detalle-title">{{asociados.nombre}}
@@ -31,21 +32,23 @@
         </div>
 
         <div id="detalle-sc">
-            <p *ngIf="asociados.hacienda1 && asociados.municipio1 && asociados.departamento1">
-               <b>{{asociados.hacienda1}} - {{asociados.municipio1}}, {{asociados.departamento1}}</b></p>
-
-            <p *ngIf="asociados.hacienda2 && asociados.municipio2 && asociados.departamento2">
-                <b>{{asociados.hacienda2}} - {{asociados.municipio2}}, {{asociados.departamento2}}</b></p>
-
-            <p *ngIf="asociados.hacienda3 && asociados.municipio3 && asociados.departamento3">
-                <b>{{asociados.hacienda3}} - {{asociados.municipio3}}, {{asociados.departamento3}}</b></p>
-
-            <p *ngIf="asociados.tipoGanado">{{asociados.tipoGanado}}</p>
-            <p>
-                <span *ngIf="asociados.direccion">{{asociados.direccion}}</span>
-                <span *ngIf="asociados.ciudadDireccion"> - {{asociados.ciudadDireccion}}, </span>
-                <span *ngIf="asociados.departamentoDireccion">{{asociados.departamentoDireccion}}</span> 
-            </p>
+            <div id="detalle-haciendas">
+                <p *ngIf="asociados.hacienda1 && asociados.municipio1 && asociados.departamento1">
+                   <b>{{asociados.hacienda1}} - {{asociados.municipio1}}, {{asociados.departamento1}}</b></p>
+    
+                <p *ngIf="asociados.hacienda2 && asociados.municipio2 && asociados.departamento2">
+                    <b>{{asociados.hacienda2}} - {{asociados.municipio2}}, {{asociados.departamento2}}</b></p>
+    
+                <p *ngIf="asociados.hacienda3 && asociados.municipio3 && asociados.departamento3">
+                    <b>{{asociados.hacienda3}} - {{asociados.municipio3}}, {{asociados.departamento3}}</b></p>
+            </div>
+                <p *ngIf="asociados.tipoGanado">{{asociados.tipoGanado}}</p>
+                <p>
+                    <span *ngIf="asociados.direccion">{{asociados.direccion}}</span>
+                    <span *ngIf="asociados.ciudadDireccion"> - {{asociados.ciudadDireccion}}, </span>
+                    <span *ngIf="asociados.departamentoDireccion">{{asociados.departamentoDireccion}}</span> 
+                </p>
+            
 
             <div id="detalle-telefonos">
                 <p *ngIf="asociados.telefono1"><i class="bi bi-telephone"></i>ㅤ{{asociados.telefono1}}</p>
@@ -74,4 +77,5 @@
     <div>
         <button (click)="asociadoProximo()">Siguiente <i class="bi bi-caret-right-fill"></i></button>
     </div>
+</div>
 </div>

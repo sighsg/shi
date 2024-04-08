@@ -18,17 +18,22 @@ interface PageEvent {
 export class CardsComponent implements OnInit {
 
   departamento!: string;
+  codigo!: string;
   asociados: any[] = [];
+  asociadosCodigo: any
 
   constructor(private route: ActivatedRoute, private router: Router, private excelService: ExcelService) { }
 
   ngOnInit(): void {
     this.departamento = this.route.snapshot.params['departamento'];
+    console.log(this.departamento)
 
     this.excelService.readExcel().then(
       data => {
-        this.asociados = data.filter(asociados => asociados.departamento1 === this.departamento);
-        /* console.log("Cards", this.asociados) */
+        this.asociados = data.filter(asociados => asociados.departamento1 === this.departamento); 
+        console.log("Cards", this.asociados)
+        this.asociadosCodigo = data.filter(asociados => asociados.codigoAsociado === this.codigo)
+        console.log("Codigo", this.codigo)
       },
       error => {
         console.error('Error al leer el archivo Excel:', error);

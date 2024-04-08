@@ -1,40 +1,20 @@
-#listadoDepartamentos {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    margin: 0 auto;
-    padding: 0.5em;
+
+h2{
+    font-weight: bold;
 }
 
-#listadoDepartamentos button{
-    background-color: var(--verdeBotones);
-    font-weight: 400;
-    color: white;
-    text-align: left;
-    cursor: pointer;
-    min-height: 3em;
-    margin: 0.5em 0.5em 0.5em 0.5em;
-    border-radius: 15px;
-    border: none;
-    box-shadow: 0 5px var(--verdeBorde);
-    transition: background-color 0.3s;
-    transition: transform 0.3s ease;
+#headerCoincidencias{
+    display: flex;
+    flex-direction: row;
 }
 
-#listadoDepartamentos i {
-    height: 90%;
-    vertical-align: middle;
-    background-color: inherit;
-    color: #F7F7F7;
+#headerCoincidencias div:first-of-type{
+    width: 50%;
 }
 
-#listadoDepartamentos button:hover {
-    background-color: var(--verdeHover);
-    transform: scale(1.01);
-    text-decoration: underline;
-}
-
-#listadoDepartamentos button:active {
-    transform: scale(0.99) rotate(0.3deg);
+#headerCoincidencias div:last-of-type{
+    text-align: right;
+    width: 50%;
 }
 
 .input-group{
@@ -43,12 +23,14 @@
     margin-bottom: 1.5em;
 }
 
-#btn-buscar{
+#btn-buscar, 
+#headerCoincidencias button{
     border: 1px solid var(--verdeHeaders);
     color: var(--verdeHeaders);
     border-radius: 5px;
     margin-left: 0.3em;
-    padding: 0 1em 0 1em;
+    padding: 0 0.3em 0 0.3em;
+    text-align: center;
 }
 
 .form-control:focus {
@@ -59,12 +41,26 @@
     box-shadow: 0 0 0 0.25rem var(--verdeBorde);
 }
 
-#btn-buscar:hover{
+#btn-buscar:hover,
+#headerCoincidencias button:hover{
     background-color: var(--verdeHover);
     border: 1px solid var(--verdeHover);
     color: white;
 }
 
-#btn-buscar:active{
+#btn-buscar:active,
+#headerCoincidencias button:active{
     background-color: var(--verdeBotones);
+}
+
+//Para ocultar el component cuando se oprima buscar o se de enter en la barra de búsqueda
+.hideComponent{
+    display: none;
+}
+
+.noMatches{
+    display: none;
+    color: red;
+    width: 97.5%;
+    margin: 0 auto;
 }
