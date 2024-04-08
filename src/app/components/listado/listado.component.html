@@ -12,27 +12,42 @@
             </p>
         </div>
         <!-- Barra de busqueda -->
-        <div class="input-group">
-            <input type="search" class="form-control rounded"
-                placeholder="Buscar por nombre, código, hacienda o tipo de ganado" aria-label="Search"
-                aria-describedby="search-addon" [(ngModel)]="filtroBusqueda" (keydown.enter)="buscar()" />
-            <button type="button" id="btn-buscar" data-mdb-ripple-init (click)="buscar()">Buscar</button>
+        <div id="busquedaCaja">
+            <div class="input-group">
+                <input type="search" class="form-control rounded"
+                    placeholder="Buscar por nombre, código, hacienda o tipo de ganado" aria-label="Search"
+                    aria-describedby="search-addon" [(ngModel)]="filtroBusqueda" (keydown.enter)="buscar()" />
+                <button type="button" id="btn-buscar" data-mdb-ripple-init (click)="buscar()">Buscar</button>
+            </div>
         </div>
         <!-- Barra de busqueda -->
-        <!-- No se encuentra nada -->
-        <p class="noMatches">No se ha encontrado ningún criador coincidente a su búsqueda.</p>
-        <!-- No se encuentra nada -->
         <!-- Sección para mostrar las coincidencias de búsqueda -->
-        <div id="coincidenciasBusqueda" *ngIf="asociadosFiltrados && asociadosFiltrados.length > 0">
-            <div id="headerCoincidencias">
-                <div>
-                    <b>Resultados de la búsqueda:</b>
-                </div>
-                <div>
-                    <button (click)="clearSearch()"><i class="bi bi-trash"></i>Deshacer búsqueda</button>
-                </div>
+        
+        <div id="headerCoincidencias" *ngIf="asociadosFiltrados">
+            <div>
+                <b>Resultados de la búsqueda:</b>
             </div>
-            <ol>
+            <div>
+                <button (click)="clearSearch()"><i class="bi bi-trash"></i>Deshacer búsqueda</button>
+            </div>
+        </div>
+
+        <div id="coincidenciasBusqueda">
+                        
+            <div id="busquedaCero" class="hideComponent">
+                Para obtener resultados primero debe escribir algo en la caja de búsqueda.
+                <hr>
+                <button (click)="clearSearch()"><i class="bi bi-trash"></i>Deshacer búsqueda</button>
+            </div>
+
+            <div *ngIf="asociadosFiltrados && asociadosFiltrados.length <= 0">
+                <p class="noMatches">
+                    Su búsqueda no ha generado ninguna coincidencia, intentélo de nuevo.
+                </p>            
+            </div>          
+        
+            
+            <ol *ngIf="asociadosFiltrados && asociadosFiltrados.length > 0">
                 <li *ngFor="let asociado of asociadosFiltrados; let i = index">
                     <!-- Cada resultado es un enlace hacia el detalle del criador -->
                     <a [routerLink]="['/detalle', asociado.codigoAsociado]">

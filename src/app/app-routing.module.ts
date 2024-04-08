@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'listado/:departamento', component: CardsComponent }, // Ruta con parámetro de departamento
   
   // Ruta para el componente DetalleComponent
-  { path: 'detalle/:codigoAsociado', component: DetalleComponent }
+  { path: 'listado/:departamento/:codigoAsociado', component: DetalleComponent }
 ];
 
 @NgModule({

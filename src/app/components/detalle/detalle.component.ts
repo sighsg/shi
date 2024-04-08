@@ -17,8 +17,6 @@ export class DetalleComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.asociadoProximo()
-
     this.route.params.subscribe(params => {
       const codigoAsociado = String(params['codigoAsociado']);
       this.excelService.readExcel().then(
@@ -36,18 +34,9 @@ export class DetalleComponent implements OnInit {
 
   socialShare() {
     navigator.share({
-      title: "Esta es mi tarjeta personal de Criador registrado en Asocebú. Para visualizarla ingrese al siguiente link: ",
+      title: "Esta es mi tarjeta personal de Criador registrado en Asocebú. Para visualizarla ingrese al siguiente enlace: ",
       url: window.document.location.href
     })
-  }  
-
-  asociadoProximo(){
-    console.log("proximo")
-    console.log("Id Actual: ", this.idActual)
-  }
-
-  asociadoAnterior(){
-    
-  }
+  } 
 }
 

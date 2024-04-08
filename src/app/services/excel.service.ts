@@ -39,8 +39,4 @@ export class ExcelService {
     console.log(codigoAsociado)
     return excelData.find(asociado => asociado.codigoAsociado === codigoAsociado)
   }
-
-  anterior(){
-    
-  }
 }

@@ -1,17 +1,16 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListadoComponent } from './components/listado/listado.component';
 import { CardsComponent } from './components/cards/cards.component';
 import { DetalleComponent } from './components/detalle/detalle.component';
-
-
-import { ButtonModule } from 'primeng/button';
-import { PaginatorModule } from 'primeng/paginator';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DepartamentosComponent } from './components/listado/departamentos/departamentos.component';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {PaginatorModule} from 'primeng/paginator';
 
 @NgModule({
   declarations: [
@@ -25,11 +24,11 @@ import { DepartamentosComponent } from './components/listado/departamentos/depar
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule, 
-    ButtonModule,
+    FormsModule,
     PaginatorModule,
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
   ],
   bootstrap: [AppComponent]
 })

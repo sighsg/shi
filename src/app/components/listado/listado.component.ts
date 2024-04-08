@@ -30,17 +30,27 @@ export class ListadoComponent implements OnInit {
   }
 
   buscar(): void {
-    // Filtrar los asociados según el texto de búsqueda
-    this.asociadosFiltrados = this.asociados.filter((asociado: any) =>
-      (asociado.nombre && asociado.nombre.toLowerCase().includes(this.filtroBusqueda.toLowerCase())) ||
-      (asociado.codigoAsociado && asociado.codigoAsociado.toString().includes(this.filtroBusqueda)) ||
-      (asociado.hacienda1 && asociado.hacienda1.toLowerCase().includes(this.filtroBusqueda.toLowerCase())) ||
-      (asociado.hacienda2 && asociado.hacienda2.toLowerCase().includes(this.filtroBusqueda.toLowerCase())) ||
-      (asociado.hacienda3 && asociado.hacienda3.toLowerCase().includes(this.filtroBusqueda.toLowerCase())) ||
-      (asociado.departamento1 && asociado.departamento1.toLowerCase().includes(this.filtroBusqueda.toLowerCase())) ||
-      (asociado.tipoGanado && asociado.tipoGanado.toLowerCase().includes(this.filtroBusqueda.toLowerCase()))
-    )
+    /* Filtra por:
+    *Nombre, Haciendas, Departamento1 y Tipo de Ganado
+    No filtra por:
+    *Departamento2/3, Redes Sociales, Números de telefono, representanteLegal ni CampoAdicional 
+   */ 
 
+    if(this.filtroBusqueda.length == 0){
+      document.getElementById("busquedaCero")?.classList.add("noMatches");
+      document.getElementById("busquedaCaja")?.classList.add("hideComponent")
+    }else{
+      this.asociadosFiltrados = this.asociados.filter((asociado: any) =>
+        (asociado.nombre && asociado.nombre.toLowerCase().includes(this.filtroBusqueda.toLowerCase())) ||
+        (asociado.codigoAsociado && asociado.codigoAsociado.toString().includes(this.filtroBusqueda)) ||
+        (asociado.hacienda1 && asociado.hacienda1.toLowerCase().includes(this.filtroBusqueda.toLowerCase())) ||
+        (asociado.hacienda2 && asociado.hacienda2.toLowerCase().includes(this.filtroBusqueda.toLowerCase())) ||
+        (asociado.hacienda3 && asociado.hacienda3.toLowerCase().includes(this.filtroBusqueda.toLowerCase())) ||
+        (asociado.departamento1 && asociado.departamento1.toLowerCase().includes(this.filtroBusqueda.toLowerCase())) ||
+        (asociado.tipoGanado && asociado.tipoGanado.toLowerCase().includes(this.filtroBusqueda.toLowerCase()))
+      )
+    }
+    //Para ocultar el listado de departamentos, añadir el estilo directamente aquí generaba error. 
     document.getElementById("app-departamentos")?.classList.add("hideComponent")
   }
 

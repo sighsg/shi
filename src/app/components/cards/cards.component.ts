@@ -31,6 +31,7 @@ export class CardsComponent implements OnInit {
     this.excelService.readExcel().then(
       data => {
         this.asociados = data.filter(asociados => asociados.departamento1 === this.departamento); 
+        console.log("largo: ", this.asociados.length)
         console.log("Cards", this.asociados)
         this.asociadosCodigo = data.filter(asociados => asociados.codigoAsociado === this.codigo)
         console.log("Codigo", this.codigo)
@@ -46,9 +47,10 @@ export class CardsComponent implements OnInit {
     // Comprobar si los parámetros son undefined antes de navegar
     if (codigoAsociado.codigoAsociado) {
       // Navegar a la página de detalles con los parámetros proporcionados
-      this.router.navigate(['/detalle', codigoAsociado.codigoAsociado]);
+      this.router.navigate(['/listado', this.departamento, codigoAsociado.codigoAsociado]);
     } else {
       console.error('Alguno de los parámetros es undefined.');
     }
   }
+
 }
