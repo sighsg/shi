@@ -8,3 +8,24 @@ Estan en formato .jpg:
 Otros problemas:
 	*Bolívar: 2447 no existe, esta usando el hierro de 1227 <- Ninguno de los dos hierros coincide con SIR
 	*Santander: 1644 no existe, esta usando el hierro de 1944 <- Al parecer el código estaba mal escrito en la página
+	*Bolívar: 2427 no existe, esta usando el hierro de 1227
+
+
+Ganadería Multigangas - 1402 esta en Antioquia y corresponde a Córdoba
+EZEQUIEL MONTEALEGRE - 1730 sale en Tolima, corresponde a Caldas
+AGROINVERSIONES PICADELLI S.A.S.- 2362 sale en Casanare, corresponde a Santander
+SERBIOAGRO DEL CAMPO SAS - 3016, se repite el código y tiene el código del 3017, lo cambio por 3017
+EMPRESA AGROPECUARIA LA BENDICIÓN - 2709 sale en Quindío y pertenece a Sucre
+EZEQUIEL MONTEALEGRE - 1730 sale en Tolima, pertenece a Caldas
+
+GANADERÍA JV y ÁLVARO DE JESÚS PUERTA HERRERA - 1658, tienen el mismo código
+
+1307 GRUPO ARGOS, aparece en Antioquia y Cordoba, el resto de más de una hacienda aparecen
+
+JUAN IGNACIO YÉPES MARTÍNEZ y HACIENDA SAN JUAN DE CAUCA, es el mismo asociado, se repite su registro.
+
+1658 GANADERÍA JV y ÁLVARO DE JESÚS PUERTA HERRERA es el mismo asociado, se repite su registro.
+
+
+
+Código 1581 está repetido

@@ -50,7 +50,7 @@
             <ol *ngIf="asociadosFiltrados && asociadosFiltrados.length > 0">
                 <li *ngFor="let asociado of asociadosFiltrados; let i = index">
                     <!-- Cada resultado es un enlace hacia el detalle del criador -->
-                    <a [routerLink]="['/detalle', asociado.codigoAsociado]">
+                    <a [routerLink]="['/listado', asociado.departamento1, asociado.codigoAsociado]">
                         {{ asociado.nombre }} - Código: {{ asociado.codigoAsociado }}
                     </a> <br>
                     <span *ngIf="asociado.hacienda1">{{ asociado.hacienda1 }}</span>

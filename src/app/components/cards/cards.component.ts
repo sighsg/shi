@@ -26,7 +26,7 @@ export class CardsComponent implements OnInit {
   //Paginador
   paginatedDataList: any[] = []; // Datos que se muestran en la página actual
   totalRecords!: number;
-  rows: number = 8; // Número de registros por página
+  rows: number = 16; // Número de registros por página
   first: number = 0; // Índice del primer registro en la página actual
 
   constructor(private route: ActivatedRoute, private router: Router, private excelService: ExcelService) { }
