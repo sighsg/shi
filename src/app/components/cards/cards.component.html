@@ -1,14 +1,12 @@
 <div class="listaAsociados">
     <!-- Título del listado -->
-    <div>
-        <!-- Aquí va el mapa del departamento -->
-        <h2>Departamento de {{ departamento }}</h2>
-    </div>
+    <div class="titulo-departamento">
+        <h2>Departamento de {{ departamento }}: <br> {{this.asociados.length}} criadores registrados</h2>
+    </div>    
     <!-- Todas las cartas -->
-    <p-paginator [rows]="3" [rowsPerPageOptions]="[3,6,9]" [totalRecords]="this.asociados.length"></p-paginator>
     <div class="card-container">
         <!-- Tarjeta individual para cada persona -->
-        <div *ngFor="let asociado of asociados" class="card">
+        <div *ngFor="let asociado of paginatedDataList" class="card">
             <div id="titulo-card">
                 <h5 class="card-title">{{ asociado.nombre }} <br>Código de Asociado: {{asociado.codigoAsociado}}</h5>
             </div>
@@ -63,4 +61,8 @@
         <!-- Tarjeta individual para cada persona -->
     </div>
     <!-- Todas las cartas -->
+    <!-- Paginador -->
+    <p-paginator (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows" [totalRecords]="totalRecords"
+        [rowsPerPageOptions]="[4,8,16]"></p-paginator>
+    <!-- Paginador -->
 </div>

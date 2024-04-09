@@ -99,6 +99,72 @@ h5{
     text-align: center;
 }
 
+/* Estilos del paginador */
+
+::ng-deep .p-inputtext{
+    padding: 0.3em;
+    font-size: 0.7em;
+}
+
+::ng-deep .p-paginator{
+ max-width: 95%;
+ margin: 0 auto;
+}
+
+::ng-deep .p-paginator .p-dropdown{
+    height: 1.5em;
+}
+
+::ng-deep .p-paginator .p-paginator-first,
+::ng-deep .p-paginator .p-paginator-last {
+    display: none;
+}
+
+::ng-deep .p-paginator .p-paginator-pages .p-paginator-page.p-highlight,
+::ng-deep .p-dropdown-panel .p-dropdown-items .p-dropdown-item.p-highlight {
+    color: var(--verdeHeaders);
+}
+
+::ng-deep .p-dropdown:not(.p-disabled).p-focus{
+    box-shadow: 0 0 0 0.2rem var(--verdeBorde);
+    border-color: var(--verdeHover);
+}
+
+::ng-deep .p-paginator .p-paginator-pages .p-paginator-page,
+::ng-deep .p-paginator .p-paginator-pages .p-paginator-page.p-highlight
+{
+    font-size: 0.7em;
+}
+
+::ng-deep .p-paginator .p-paginator-pages .p-paginator-page{
+    min-width: 3rem;
+}
+
+
+::ng-deep .p-dropdown-panel .p-dropdown-items{
+    padding: 1em 0;
+}
+
+::ng-deep .p-dropdown-item{
+    text-align: center;
+}
+
+ol, ul{
+    padding-left: 0.3em;
+}
+
+dl, ol, ul {
+    margin-bottom: 0.3em;
+}
+
+::ng-deep .p-dropdown-panel .p-dropdown-items .p-dropdown-item{
+    padding: 0.3em 0.3em;
+}
+
+::ng-deep .p-dropdown:not(.p-disabled):hover{
+    border-color: var(--verdeBotones);
+}
+
 @media screen and (max-width: 1619px){
     .card{
         height: auto;
@@ -135,5 +201,11 @@ h5{
     
     #cardInfo{
         min-height: auto;
+    }    
+}
+
+@media screen and (max-width: 500px){
+    ::ng-deep .p-paginator .p-paginator-pages .p-paginator-page{
+        min-width: 1rem;
     }
 }
