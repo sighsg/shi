@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ExcelService } from '../../services/excel.service';
-import e from 'express';
 
 interface PageEvent {
   first: number;

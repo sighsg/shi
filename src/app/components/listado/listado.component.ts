@@ -57,5 +57,4 @@ export class ListadoComponent implements OnInit {
   clearSearch() {
     document.location.reload()
   }
-
 }

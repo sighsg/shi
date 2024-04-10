@@ -106,6 +106,14 @@ button:active {
     width: 50%;
 }
 
+.hideElements{
+    display: none;
+}
+
+.unhideelements{
+    display: block;
+}
+
 @media screen and (max-width: 1648px){
     .detalle-card{
         max-width: 60%;
