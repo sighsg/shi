@@ -47,7 +47,10 @@ export class ListadoComponent implements OnInit {
         (asociado.hacienda2 && asociado.hacienda2.toLowerCase().includes(this.filtroBusqueda.toLowerCase())) ||
         (asociado.hacienda3 && asociado.hacienda3.toLowerCase().includes(this.filtroBusqueda.toLowerCase())) ||
         (asociado.departamento1 && asociado.departamento1.toLowerCase().includes(this.filtroBusqueda.toLowerCase())) ||
-        (asociado.tipoGanado && asociado.tipoGanado.toLowerCase().includes(this.filtroBusqueda.toLowerCase()))
+        (asociado.tipoGanado && asociado.tipoGanado.toLowerCase().includes(this.filtroBusqueda.toLowerCase())) ||
+        (asociado.municipio1 && asociado.municipio1.toLowerCase().includes(this.filtroBusqueda.toLowerCase())) ||
+        (asociado.municipio2 && asociado.municipio2.toLowerCase().includes(this.filtroBusqueda.toLowerCase())) ||
+        (asociado.municipio3 && asociado.municipio3.toLowerCase().includes(this.filtroBusqueda.toLowerCase()))
       )
     }
     //Para ocultar el listado de departamentos, añadir el estilo directamente aquí generaba error. 

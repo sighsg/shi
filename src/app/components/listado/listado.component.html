@@ -55,7 +55,11 @@
                     </a> <br>
                     <span *ngIf="asociado.hacienda1">{{ asociado.hacienda1 }}</span>
                     <span *ngIf="asociado.departamento1"> - {{ asociado.departamento1 }}</span>
-                    <span *ngIf="asociado.tipoGanado"> - {{ asociado.tipoGanado }}</span>
+                    <span *ngIf="asociado.hacienda2">, {{ asociado.hacienda2 }}</span>
+                    <span *ngIf="asociado.departamento2"> - {{ asociado.departamento2 }}</span>
+                    <span *ngIf="asociado.hacienda3"> y {{ asociado.hacienda3 }}</span>
+                    <span *ngIf="asociado.departamento3"> - {{ asociado.departamento3 }}</span>
+                    <span *ngIf="asociado.tipoGanado"> <br>{{ asociado.tipoGanado }}</span>
                 </li>
             </ol>
         </div>
