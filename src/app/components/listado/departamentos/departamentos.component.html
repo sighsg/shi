@@ -3,7 +3,7 @@
         Botones generados dinámicamente para cada departamento, los departamentos que no cuenten
         con haciendas no se mostrarán, dado que los toma desde el archivo excel.
     -->
-    <button *ngFor="let departamento of departamentos" (click)="navigateToDepartamento(departamento)">
+    <button *ngFor="let departamento of departamentos" (click)="navigateToDepartamento(departamento)" >
         <i class="bi bi-geo-alt-fill"></i> {{ departamento }}
     </button>
 </div>

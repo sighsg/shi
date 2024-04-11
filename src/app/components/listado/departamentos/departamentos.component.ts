@@ -23,8 +23,14 @@ export class DepartamentosComponent implements OnInit{
     this.excelService.readExcel().then(
       data => {
         this.asociados = data;
-        // Obtenemos los departamentos únicos del archivo Excel
-        this.departamentos = [...new Set(data.map(asociado => asociado.departamento1))];
+        /* Esto hace tres cosas: 
+        1. map: Mapea los datos para solo obtener, en este caso, el tepartamento1
+        2. filter: filtra los calores malos com onull, undefined,false, 0 o nan
+        3. set: elimina cualquier valor duplicado
+        */ 
+
+        this.departamentos = [...new Set(data.map(asociado => asociado.departamento1).filter(departamento => departamento))];
+
         /* console.log(this.departamentos) */
       },
       error => {
