@@ -1,81 +1,87 @@
 <div class="card-body">
-<div class="detalle-card">
-    <div id="titulo-detalle">
-        <h5 class="detalle-title">{{asociados.nombre}}
-            <br>Código de Asociado: {{asociados.codigoAsociado}}
-        </h5>
-    </div>
-
-    <div id="detalle-body">
-        <div id="detalle-fc">
-            <img src="https://asocebu.com/images/hierros/{{asociados.codigoAsociado}}.png"
-                alt="Imagen Hierro del Asociado Número {{asociados.codigoAsociado}}.">
-
-            <div id="detalle-fc-social">
-                <a *ngIf="asociados.whatsapp1" href="https://wa.me/+{{asociados.whatsapp1}}" target="_blank"
-                    role="button"><i class="bi bi-whatsapp"></i> WhatsApp</a>
-                <a *ngIf="asociados.whatsapp2" href="https://wa.me/+{{asociados.whatsapp2}}" target="_blank"
-                    role="button"><i class="bi bi-whatsapp"></i> WhatsApp2</a>
-                <a *ngIf="asociados.instagram" href="https://www.instagram.com/{{asociados.instagram}}" target="_blank"
-                    role="button"><i class="bi bi-instagram"></i> Instagram</a>
-                <a *ngIf="asociados.whatsapp2" href="https://www.facebook.com/{{asociados.facebook}}" target="_blank"
-                    role="button"><i class="bi bi-facebook"></i> Facebook</a>
-                <a *ngIf="asociados.tiktok" href="https://www.tiktok.com/@{{asociados.tiktok}}" target="_blank"
-                    role="button"><i class="bi bi-tiktok"></i> TikTok</a>
-                <a *ngIf="asociados.sitioWeb" href="{{asociados.sitioWeb}}" target="_blank"><i class="bi bi-globe"></i> Sitio web</a>
-                <a *ngIf="asociados.email1" href="mailto:{{asociados.email1}}" target="_blank"><i class="bi bi-envelope"></i>
-                    E-mail</a>
-                <a *ngIf="asociados.email2" href="mailto:{{asociados.email2}}" target="_blank"><i class="bi bi-envelope"></i>
-                    E-mail2</a>
-            </div>
-
+    <div class="detalle-card">
+        <div id="titulo-detalle">
+            <h5 class="detalle-title">{{asociados.nombre}}
+                <br>Código de Asociado: {{asociados.codigoAsociado}}
+            </h5>
         </div>
 
-        <div id="detalle-sc">
-            <div id="detalle-haciendas">
-                <p *ngIf="asociados.hacienda1 && asociados.municipio1 && asociados.departamento1">
-                   <b>{{asociados.hacienda1}} - {{asociados.municipio1}}, {{asociados.departamento1}}</b></p>
-    
-                <p *ngIf="asociados.hacienda2 && asociados.municipio2 && asociados.departamento2">
-                    <b>{{asociados.hacienda2}} - {{asociados.municipio2}}, {{asociados.departamento2}}</b></p>
-    
-                <p *ngIf="asociados.hacienda3 && asociados.municipio3 && asociados.departamento3">
-                    <b>{{asociados.hacienda3}} - {{asociados.municipio3}}, {{asociados.departamento3}}</b></p>
+        <div id="detalle-body">
+            <div id="detalle-fc">
+                <img src="https://asocebu.com/images/hierros/{{asociados.codigoAsociado}}.png"
+                    alt="Imagen Hierro del Asociado Número {{asociados.codigoAsociado}}.">
+
+                <div id="detalle-fc-social">
+                    <a *ngIf="asociados.whatsapp1" href="https://wa.me/+{{asociados.whatsapp1}}" target="_blank"
+                        role="button"><i class="bi bi-whatsapp"></i> WhatsApp</a>
+                    <a *ngIf="asociados.whatsapp2" href="https://wa.me/+{{asociados.whatsapp2}}" target="_blank"
+                        role="button"><i class="bi bi-whatsapp"></i> WhatsApp2</a>
+                    <a *ngIf="asociados.instagram" href="https://www.instagram.com/{{asociados.instagram}}"
+                        target="_blank" role="button"><i class="bi bi-instagram"></i> Instagram</a>
+                    <a *ngIf="asociados.whatsapp2" href="https://www.facebook.com/{{asociados.facebook}}"
+                        target="_blank" role="button"><i class="bi bi-facebook"></i> Facebook</a>
+                    <a *ngIf="asociados.tiktok" href="https://www.tiktok.com/@{{asociados.tiktok}}" target="_blank"
+                        role="button"><i class="bi bi-tiktok"></i> TikTok</a>
+                    <a *ngIf="asociados.sitioWeb" href="{{asociados.sitioWeb}}" target="_blank"><i
+                            class="bi bi-globe"></i> Sitio web</a>
+                    <a *ngIf="asociados.email1" href="mailto:{{asociados.email1}}" target="_blank"><i
+                            class="bi bi-envelope"></i>
+                        E-mail</a>
+                    <a *ngIf="asociados.email2" href="mailto:{{asociados.email2}}" target="_blank"><i
+                            class="bi bi-envelope"></i>
+                        E-mail2</a>
+                </div>
+
             </div>
+
+            <div id="detalle-sc">
+                <div id="detalle-haciendas">
+                    <p *ngIf="asociados.hacienda1 && asociados.municipio1 && asociados.departamento1">
+                        <b>{{asociados.hacienda1}} - {{asociados.municipio1}}, {{asociados.departamento1}}</b>
+                    </p>
+
+                    <p *ngIf="asociados.hacienda2 && asociados.municipio2 && asociados.departamento2">
+                        <b>{{asociados.hacienda2}} - {{asociados.municipio2}}, {{asociados.departamento2}}</b>
+                    </p>
+
+                    <p *ngIf="asociados.hacienda3 && asociados.municipio3 && asociados.departamento3">
+                        <b>{{asociados.hacienda3}} - {{asociados.municipio3}}, {{asociados.departamento3}}</b>
+                    </p>
+                </div>
                 <p *ngIf="asociados.tipoGanado">{{asociados.tipoGanado}}</p>
                 <p>
                     <span *ngIf="asociados.direccion">{{asociados.direccion}}</span>
                     <span *ngIf="asociados.ciudadDireccion"> - {{asociados.ciudadDireccion}}, </span>
-                    <span *ngIf="asociados.departamentoDireccion">{{asociados.departamentoDireccion}}</span> 
+                    <span *ngIf="asociados.departamentoDireccion">{{asociados.departamentoDireccion}}</span>
                 </p>
-            
 
-            <div id="detalle-telefonos">
-                <p *ngIf="asociados.telefono1"><i class="bi bi-telephone"></i>ㅤ{{asociados.telefono1}}</p>
-                <p *ngIf="asociados.telefono2"><i class="bi bi-telephone"></i>ㅤ{{asociados.telefono2}}</p>
-                <p *ngIf="asociados.telefono3"><i class="bi bi-telephone"></i>ㅤ{{asociados.telefono3}}</p>
-                <p *ngIf="asociados.telefono4"><i class="bi bi-telephone"></i>ㅤ{{asociados.telefono4}}</p>
-                <p *ngIf="asociados.telefono5"><i class="bi bi-telephone"></i>ㅤ{{asociados.telefono5}}</p>
-                <p *ngIf="asociados.telefono6"><i class="bi bi-telephone"></i>ㅤ{{asociados.telefono6}}</p>
+
+                <div id="detalle-telefonos">
+                    <p *ngIf="asociados.telefono1"><i class="bi bi-telephone"></i>ㅤ{{asociados.telefono1}}</p>
+                    <p *ngIf="asociados.telefono2"><i class="bi bi-telephone"></i>ㅤ{{asociados.telefono2}}</p>
+                    <p *ngIf="asociados.telefono3"><i class="bi bi-telephone"></i>ㅤ{{asociados.telefono3}}</p>
+                    <p *ngIf="asociados.telefono4"><i class="bi bi-telephone"></i>ㅤ{{asociados.telefono4}}</p>
+                    <p *ngIf="asociados.telefono5"><i class="bi bi-telephone"></i>ㅤ{{asociados.telefono5}}</p>
+                    <p *ngIf="asociados.telefono6"><i class="bi bi-telephone"></i>ㅤ{{asociados.telefono6}}</p>
+                </div>
+
+                <p *ngIf="asociados.representanteLegal">Representante legal: {{asociados.representanteLegal}}</p>
+                <p>{{asociados.campoAdicional1}}</p>
+
+                <div id="detalle-share">
+                    <button id="socialBtn" (click)="socialShare()"><i class="bi bi-share"></i>  Compartir</button>
+                </div>
             </div>
 
-            <p *ngIf="asociados.representanteLegal">Representante legal: {{asociados.representanteLegal}}</p>
-            <p>{{asociados.campoAdicional1}}</p>
-
-            <div id="detalle-share">
-                <button (click)="socialShare()"><i class="bi bi-share"></i> Compartir</button>
-            </div>
         </div>
+    </div>
 
-    </div>
-</div>
+    <div id="detalle-btn">
 
-<div id="detalle-btn">
-    <div>
-        <button id="prevBtn" (click)="prev()"><i class="bi bi-caret-left-fill"></i> Anterior</button>
+        <button id="prevBtn" (click)="prev()">Anterior</button>
+
+        <button id="homeBtn" (click)="home()">Inicio</button>
+
+        <button id="nextBtn" (click)="next()">Siguiente</button>
     </div>
-    <div>
-        <button id="nextBtn" (click)="next()">Siguiente <i class="bi bi-caret-right-fill"></i></button>
-    </div>
-</div>
 </div>

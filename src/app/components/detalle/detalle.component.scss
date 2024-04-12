@@ -92,26 +92,17 @@ button:active {
 
 #detalle-btn{
     margin: 0 auto;
-    width: 35%;
-    display: flex;
-    flex-direction: row;
+    width: 38%;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
 }
 
-#detalle-btn div:first-of-type{
-    width: 50%;
+#detalle-btn button{
+    text-align: center;
 }
 
-#detalle-btn div:last-of-type{
-    text-align: right;
-    width: 50%;
-}
-
-.hideElements{
-    display: none;
-}
-
-.unhideelements{
-    display: block;
+#socialBtn{
+    padding: 0.6em 0.6em 0.6em 0.6em;
 }
 
 @media screen and (max-width: 1648px){
@@ -124,6 +115,9 @@ button:active {
     .detalle-card{
         max-width: 80%;
     }
+    #detalle-btn{
+        width: 60%;
+    }
 }
 
 @media screen and (max-width: 825px){
@@ -135,16 +129,18 @@ button:active {
         width: 40%;
     }
 
-    #detalle-btn{
-        width: 100%;
-    }
-
     #detalle-fc a,
     #detalle-sc, 
     #detalle-sc span,
     #detalle-sc i,
-    #detalle-telefonos p{
+    #detalle-telefonos p,
+    #detalle-btn i,
+    #detalle-btn button{
         font-size: 0.75em;
+    }
+
+    #detalle-btn{
+        width: 80%;        
     }
 }
 
@@ -203,7 +199,8 @@ button:active {
     #detalle-sc, 
     #detalle-sc span,
     #detalle-sc i,
-    #detalle-telefonos p{
+    #detalle-telefonos p,
+    #socialBtn{
         font-size: 0.75em;
     }
 
@@ -211,5 +208,17 @@ button:active {
         min-height: auto;
         margin: 0.1em 0.1m 0.1em 0.1em;
         margin-bottom: 0.5em;
+    }
+
+    #detalle-btn{
+        width: 100%;
+    }
+
+    #socialBtn{
+        padding: 0.7em 0.7em 0.7em 0.7em;
+    }
+
+    #detalle-btn button{
+        padding: 0.7em 0 0.7em 0;
     }
 }
