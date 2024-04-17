@@ -29,10 +29,8 @@ export class DepartamentosComponent implements OnInit{
         3. set: elimina cualquier valor duplicado
         4. sort: los ordena de manera descendente
         */ 
-
         this.departamentos = [...new Set(data.map(asociado => asociado.departamento1).filter(departamento => departamento))].sort();
-        /* console.log(this.departamentos) */
-      
+        /* console.log(this.departamentos) */      
       },
       error => {
         console.error('Error al leer el archivo Excel:', error);

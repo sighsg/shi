@@ -18,7 +18,6 @@ export class ListadoComponent implements OnInit {
     /* Llamamos al servicio para leer el archivo Excel y obtener los departamentos,
     con el mapeo se obtendrá solo uno, es decir, no se deben traer datos repetidos
     independiente del número de veces que se repitan en db.*/
-
     this.excelService.readExcel().then(
       data => {
         this.asociados = data;
@@ -34,12 +33,12 @@ export class ListadoComponent implements OnInit {
     *Nombre, Haciendas, Departamento1 y Tipo de Ganado
     No filtra por:
     *Departamento2/3, Redes Sociales, Números de telefono, representanteLegal ni CampoAdicional 
-   */ 
+   */
 
-    if(this.filtroBusqueda.length == 0){
+    if (this.filtroBusqueda.length == 0) {
       document.getElementById("busquedaCero")?.classList.add("noMatches");
       document.getElementById("busquedaCaja")?.classList.add("hideComponent")
-    }else{
+    } else {
       this.asociadosFiltrados = this.asociados.filter((asociado: any) =>
         (asociado.nombre && asociado.nombre.toLowerCase().includes(this.filtroBusqueda.toLowerCase())) ||
         (asociado.codigoAsociado && asociado.codigoAsociado.toString().includes(this.filtroBusqueda)) ||

@@ -5,12 +5,13 @@ import { DetalleComponent } from './components/detalle/detalle.component';
 import { CardsComponent } from './components/cards/cards.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'listado', pathMatch: 'full' }, //Para que se redirija a listado y quede por defecto
-  { path: 'listado', component: ListadoComponent }, //Componente principal
-/*   { path: 'listado', component: ListadoComponent }, */
-  { path: 'listado/:departamento', component: CardsComponent }, // Ruta con parámetro de departamento
-  
-  // Ruta para el componente DetalleComponent
+  //Ruta al componente principal (se redirrecionará por defecto)
+  { path: '', redirectTo: 'listado', pathMatch: 'full' },
+  //Componente principal (Descripción del directorio y barra de búsqueda. El listado se muestra con la etiqueta)
+  { path: 'listado', component: ListadoComponent },
+  //Ruta para cada departamento (Todas las cartas de cada uno de los departamentos)
+  { path: 'listado/:departamento', component: CardsComponent }, 
+  // Ruta para el componente DetalleComponent (La carta individual de cada criador)
   { path: 'listado/:departamento/:codigoAsociado', component: DetalleComponent }
 ];
 

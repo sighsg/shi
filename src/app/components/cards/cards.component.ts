@@ -25,8 +25,8 @@ export class CardsComponent implements OnInit {
   //Paginador
   paginatedDataList: any[] = []; // Datos que se muestran en la página actual
   totalRecords!: number;
-  rows: number = 16; // Número de registros por página
-  first: number = 0; // Índice del primer registro en la página actual
+  rows: number = 16; //Número de registros por página
+  first: number = 0; //Índice del primer registro en la página actual
 
   constructor(private route: ActivatedRoute, private router: Router, private excelService: ExcelService) { }
 
@@ -53,9 +53,9 @@ export class CardsComponent implements OnInit {
 
   //Método para redirigir a la particular-card
   verMas(codigoAsociado: any): void {
-    // Comprobar si los parámetros son undefined antes de navegar
+    //Comprobar si los parámetros son undefined antes de navegar
     if (codigoAsociado.codigoAsociado) {
-      // Navegar a la página de detalles con los parámetros proporcionados
+      //Navegar a la página de detalles con los parámetros proporcionados
       this.router.navigate(['/listado', this.departamento, codigoAsociado.codigoAsociado]);
     } else {
       console.error('Alguno de los parámetros es undefined.');
@@ -63,16 +63,16 @@ export class CardsComponent implements OnInit {
   }
 
   onPageChange(event:any) {
-    // Evento contiene la información de la paginación
+    //Evento contiene la información de la paginación
     this.first = event.first;
     this.rows = event.rows;
     this.paginate();
   }
 
   paginate() {
-    // Calcula el índice del último registro en la página actual
+    //Calcula el índice del último registro en la página actual
     let lastIndex = this.first + this.rows;
-    // Actualiza paginatedDataList con los datos de la página actual
+    //Actualiza paginatedDataList con los datos de la página actual
     this.paginatedDataList = this.asociados.slice(this.first, lastIndex);
   }
 }

@@ -21,8 +21,8 @@
             </div>
         </div>
         <!-- Barra de busqueda -->
+
         <!-- Sección para mostrar las coincidencias de búsqueda -->
-        
         <div id="headerCoincidencias" *ngIf="asociadosFiltrados">
             <div>
                 <b>Resultados de la búsqueda:</b>
@@ -33,19 +33,16 @@
         </div>
 
         <div id="coincidenciasBusqueda">
-                        
             <div id="busquedaCero" class="hideComponent">
                 Para obtener resultados primero debe escribir algo en la caja de búsqueda.
                 <hr>
                 <button (click)="clearSearch()"><i class="bi bi-trash"></i>Deshacer búsqueda</button>
             </div>
-
             <div *ngIf="asociadosFiltrados && asociadosFiltrados.length <= 0">
                 <p class="noMatches">
                     Su búsqueda no ha generado ninguna coincidencia, intentélo de nuevo.
-                </p>            
-            </div>          
-        
+                </p>
+            </div>
             
             <ol *ngIf="asociadosFiltrados && asociadosFiltrados.length > 0">
                 <li *ngFor="let asociado of asociadosFiltrados; let i = index">

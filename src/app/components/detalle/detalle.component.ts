@@ -14,8 +14,6 @@ export class DetalleComponent implements OnInit {
   indexAsociado: any;
   asociadoSiguiente: any;
   asociadoAnterior: any;
-  asociadoUltimo: any;
-  asociadoUltimoRed: any;
   segundoAsociado: any;
   ultimoAsociadoIndex: any;
   ultimoAsociado: any;
@@ -44,7 +42,13 @@ export class DetalleComponent implements OnInit {
       );
     });
   }
+/* 
+  Esta función es nativa de javascript y lo que hará es compartir el link por la vía que
+  el usuario prefiera(mail, redes sociales, etc).
 
+  El title es lo que se pondrá junto al link(puede verse cuando se envía por una vía que
+  sea de mensajería, tal como lo es whatsapp o el email).
+ */
   socialShare() {
     navigator.share({
       title: "Esta es mi tarjeta personal de Criador registrado en Asocebú. Para visualizarla ingrese al siguiente enlace: ",
@@ -52,16 +56,21 @@ export class DetalleComponent implements OnInit {
     })
   }
 
-  home(){
-    this.router.navigate(['/listado'])
-  }
-
+  /* 
+  prev() y next() simplemente restan una posición al index, por alguna razón no funcionan
+  bien con la posición 0 ni con la final, por ello se parametrizan los casos concretos.
+  home() solo realiza una redirección al componenente principal.
+  */
   prev() {
     if (this.indexAsociado == 0) {
       this.router.navigate(['/listado', this.asociados.departamento1, this.ultimoAsociado])
     } else {
       this.router.navigate(['/listado', this.asociados.departamento1, this.asociadoAnterior])
     }
+  }
+
+  home() {
+    this.router.navigate(['/listado'])
   }
 
   next() {
